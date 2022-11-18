@@ -1,0 +1,12 @@
+<h1><%= @list.name %></h1>
+<p>List info:</p>
+<%= link_to 'Create a new bookmark', new_list_bookmark_path(@list)  %>
+<hr>
+<ul>
+  <% @list.movies.each do |movie| %>
+    <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+    <li><%= movie.title %>  <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are sure you?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %></li>
+  <% end %>
+</ul>
