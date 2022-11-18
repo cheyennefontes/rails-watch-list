@@ -5,6 +5,7 @@
 <ul>
   <% @list.movies.each do |movie| %>
     <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+    <% image_tag movie.poster_url, style: 'width: 300px; height: 200px'%>
     <li><%= movie.title %>  <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are sure you?"} do %>
           <i class="fa-regular fa-trash-can"></i>
         <% end %></li>
