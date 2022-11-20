@@ -3,7 +3,7 @@ require 'json'
 
 url = 'https://tmdb.lewagon.com/movie/top_rated'
 Movie.destroy_all
-10.times do |i|
+20.times do |i|
   puts "importing #{i + 1} films from API"
   movies = JSON.parse(URI.open("#{url}").read)
   movie_hash = movies['results'][i]
