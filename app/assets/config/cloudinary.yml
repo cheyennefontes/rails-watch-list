@@ -1,0 +1,11 @@
+development:
+  cloud_name: "dcfii4sfc"
+  api_key: "849982254611176"
+  api_secret: "SHCHhFO6XC2mbJQpmFNf5gFKqE4"
+  secure: true
+
+production:
+  cloud_name: "dcfii4sfc"
+  api_key: "849982254611176"
+  api_secret: "SHCHhFO6XC2mbJQpmFNf5gFKqE4"
+  secure: true
