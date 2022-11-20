@@ -2,7 +2,8 @@
 
 .card-product {
   overflow: hidden;
-  height: 200px;
+  height: 150px;
+  width: 250px;
   background:#ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -11,7 +12,7 @@
 
 .card-product img {
   height: 100%;
-  width: 150px;
+  width: 100px;
   object-fit: cover;
 }
 
@@ -36,7 +37,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 15px;
 }
 
 .card-category {
