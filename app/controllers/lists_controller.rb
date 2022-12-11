@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :destroy]
 
   def index
-    @lists = List.all
+    @lists = List.all.order("created_at DESC")
   end
 
   def show
@@ -11,10 +11,12 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @list.user = current_user
   end
 
   def create
     @list = List.new(list_params)
+    @list.user = current_user
     if @list.save
       redirect_to list_path(@list)
     else
