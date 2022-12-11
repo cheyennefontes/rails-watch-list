@@ -1,32 +1,28 @@
-
 <div class="navbar navbar-expand-sm navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "mymovies.png" %>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-     <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-            <%= link_to "Home", "/", class: "nav-link text-light" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "New list", "lists/new", class: "nav-link text-light" %>
-          </li>
-          </ul>
-
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "/", class: "nav-link text-light" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "New list", "lists/new", class: "nav-link text-light" %>
+      </li>
+      
+    </ul>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <%if user_signed_in? %>
-
-
-           <%= current_user.nickname %>
           <li class="nav-item dropdown text-light">
-          <%= render 'shared/avatar' %>
+          <%= current_user.nickname %>
+            <%= render 'shared/avatar' %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-               <%= link_to "Edit Profile", "/users/edit", class: "dropdown-item" %>
+              <%= link_to "Edit Profile", "/users/edit", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
@@ -37,7 +33,7 @@
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link text-light" %>
           </li>
-         <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
