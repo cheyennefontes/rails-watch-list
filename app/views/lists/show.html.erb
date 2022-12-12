@@ -2,19 +2,19 @@
 <div class="container-sm">
 <div class=" d-flex align-items-center justify-content-between p-3" >
 <h2><%=@list.name%></h2>
-<%= link_to "delete this list", list_path(@list), class: 'btn btn-dark', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
-<%= link_to 'Insert new movie', new_list_bookmark_path(@list), class: 'btn btn-dark' %>
+<%= link_to "Deletar lista", list_path(@list), class: 'btn btn-dark', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+<%= link_to 'Inserir novo filme', new_list_bookmark_path(@list), class: 'btn btn-dark' %>
 </div>
 </div>
 <div class="cards container">
   <% @list.movies.each do |movie| %>
   <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
     <div class="card-product">
-      <%= image_tag movie.poster_url, style: 'background: cover' %>
+    <%= cl_image_path list.photo.key, style: 'background: cover'  if list.photo.attached? %>
       <div class="card-product-infos">
         <h2><%= movie.title %></h2>
-        <p> Comment: <strong><%= bookmark.comment %></strong></p>
-        <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are sure you?"} do %>
+        <p> Comentário: <strong><%= bookmark.comment %></strong></p>
+        <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Tem certeza que deseja excluir?"} do %>
           <i class="fa-regular fa-trash-can"></i>
         <% end %>
       </div>
