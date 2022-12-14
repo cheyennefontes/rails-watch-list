@@ -9,7 +9,6 @@
     <% @lists.each do |list| %>
       <%= link_to list_path(list), class:'text-decoration-none' do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key if list.photo.attached? %>')">
-          <p class="fs-6 fst-italic" >  Publicado <%= time_ago_in_words(list.created_at) %> atrás
           <h2 class="fw-bold py-4" > <%= list.name %> </h2>
         </div>
       <% end %>
