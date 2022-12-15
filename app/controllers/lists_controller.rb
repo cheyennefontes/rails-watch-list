@@ -19,7 +19,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save
-      redirect_to list_path(@list)
+      redirect_to list_path(@list), notice: 'Lista criada com sucesso.'
     else
       render :new, status: :unprocessable_entity
     end

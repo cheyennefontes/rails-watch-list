@@ -4,10 +4,10 @@
 
     <div class="form-inputs">
       <%= f.input :comment, label:"Comentário" %>
-      <%= f.input :movie, label:"Filme"%>
-      <%= f.input :photo, as: :file, label:"Foto" %>
+      <%= f.association :movie, collection: @movies %>
     </div>
 
+  
     <div class="form-actions">
       <%= f.button :submit, "Enviar",class: 'btn btn-dark' %>
     </div>
