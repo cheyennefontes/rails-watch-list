@@ -9,14 +9,19 @@
       <%= link_to 'Inserir novo filme', new_list_bookmark_path(@list), class: 'btn btn-dark' %>
     </div>
   </div>
-  <div class="cards container">
+    <br/>
+          <br/>
+  <div class="cards-1 container">
     <% @list.movies.each do |movie| %>
       <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
       <div class="card-product">
         <%= image_tag movie.poster_url, style: 'background: cover' %>
         <div class="card-product-infos">
           <h2><%= movie.title %></h2>
-          <p> Comentário: <strong><%= bookmark.comment %></strong></p>
+          <p> <strong>Comentário: </strong><%= bookmark.comment %></p>
+          <br/>
+          <br/>
+          <br/>
           <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Tem certeza que deseja excluir?"} do %>
             <i class="fa-regular fa-trash-can"></i>
           <% end %>
@@ -25,3 +30,6 @@
     <% end %>
   </div>
 </div>
+<br/>
+<br/>
+<br/>

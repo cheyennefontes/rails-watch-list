@@ -1,24 +1,28 @@
 
 .card-product {
   overflow: hidden;
-  height: 150px;
-  width: 250px;
+  height: 200px;
+  width: 100%;
   background:#ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
+  align-items: top;
 }
 
 .card-product img {
   height: 100%;
-  width: 100px;
   object-fit: cover;
 }
 
 
+.cards-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 70px;
+}
 
 .card-product p {
-  font-size: 12px;
+  font-size: 20px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -33,6 +37,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 70px;
+}
+
+i {
+  color:black
 }
 
 .lists {
