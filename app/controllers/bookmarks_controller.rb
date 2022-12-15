@@ -1,6 +1,3 @@
-require "open-uri"
-require "nokogiri"
-
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: :destroy
   before_action :set_list, only: [:new, :create]
@@ -9,6 +6,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
     @movies = Movie.all
     @bookmark.user = current_user
+    authorize @bookmark
   end
 
   def create
@@ -16,6 +14,7 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark.list = @list
     @bookmark.user = current_user
+    authorize @bookmark
     if @bookmark.save
       redirect_to list_path(@list), notice: 'Bookmark was successfully created.'
     else
@@ -26,6 +25,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
+    authorize @bookmark
     redirect_to list_path(@bookmark.list), status: :see_other
   end
 

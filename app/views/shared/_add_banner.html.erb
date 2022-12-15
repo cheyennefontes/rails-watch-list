@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/06/03/12/42/popcorn-1433327_960_720.jpg);">
   <div class="text-banner px-4 py-5">
-    <h3 class="fw-bold fs-1">Bem Vindo(a) <%= current_user.nickname %>
+    <h3 class="fw-bold fs-1">Bem Vindo(a) <% if current_user%><%= current_user.nickname %>
+    <%end%>
     </div>
     <div class="form-banner">
       <form class="d-flex" role="search">
