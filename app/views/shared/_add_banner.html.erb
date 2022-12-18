@@ -1,11 +1,29 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/06/03/12/42/popcorn-1433327_960_720.jpg);">
-  <div class="text-banner px-4 py-5">
-    <h3 class="fw-bold fs-1">Bem Vindo(a) <% if current_user%><%= current_user.nickname %>
-    <%end%>
+  <div class="text-banner px-4 py-4">
+    <% if current_user%>
+      <h3 class="fw-bold fs-1">Bem Vindo(a) <%= current_user.nickname %>
+        <p>
+          <a class="btn btn-ghost fw-bold fs-5 me-2 py-2 px-4  mt-5" href="/lists/new">Quero Criar uma nova lista</a>
+        </p>
+      <%else%>
+        <h3 class="fw-bold fs-1">Bem vindo(a) ao MyMovies!</h3>
+        <p>
+          <a class="btn btn-light fw-bold fs-5 me-2 py-2 px-4  mt-5" href="users/sign_in">Quero fazer login</a>
+          <a class="btn btn-light fw-bold fs-5 me-2 py-2 px-4  mt-5" href="users/sign_up">Quero me cadastrar</a>
+        </p>
+      <%end%>
     </div>
-    <div class="form-banner">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar por uma lista..." aria-label="Search">
-      </form>
-    </div>
+       <%= form_with url: lists_path,
+                        method: :get,
+                        class: "d-flex",
+                        data: {turbo_frame: 'search', controller: 'search'} do |f| %>
+            <%= f.text_field :query,
+                            value: params[:query],
+                            class: "form-control mx-4",
+                            type: "search",
+                            placeholder: "Buscar listas...",
+                            label: "Search",
+                            data: {action: 'keyup->search#perform'} %>
+          <% end %>
   </div>
+</div>

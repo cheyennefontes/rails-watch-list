@@ -4,7 +4,18 @@ class ListsController < ApplicationController
 
   def index
     skip_policy_scope
-    @lists = List.all.order("created_at DESC")
+    if params[:query].present?
+      @lists = List.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @lists = List.all.order("created_at DESC")
+    end
+    respond_to do |format|
+      if turbo_frame_request?
+        format.html { render partial: 'shared/lists', locals: { lists: @lists } }
+      else
+        format.html
+      end
+    end
   end
 
   def show

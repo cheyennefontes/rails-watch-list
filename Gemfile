@@ -28,6 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'byebug'
 gem 'nokogiri'
+gem "pg_search"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 gem "autoprefixer-rails"
