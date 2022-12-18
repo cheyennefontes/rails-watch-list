@@ -2,15 +2,8 @@
   <div class="text-banner px-4 py-4">
     <% if current_user%>
       <h3 class="fw-bold fs-1">Bem Vindo(a) <%= current_user.nickname %>
-        <p>
-          <a class="btn btn-ghost fw-bold fs-5 me-2 py-2 px-4  mt-5" href="/lists/new">Quero Criar uma nova lista</a>
-        </p>
       <%else%>
         <h3 class="fw-bold fs-1">Bem vindo(a) ao MyMovies!</h3>
-        <p>
-          <a class="btn btn-light fw-bold fs-5 me-2 py-2 px-4  mt-5" href="users/sign_in">Quero fazer login</a>
-          <a class="btn btn-light fw-bold fs-5 me-2 py-2 px-4  mt-5" href="users/sign_up">Quero me cadastrar</a>
-        </p>
       <%end%>
     </div>
        <%= form_with url: lists_path,
@@ -19,7 +12,7 @@
                         data: {turbo_frame: 'search', controller: 'search'} do |f| %>
             <%= f.text_field :query,
                             value: params[:query],
-                            class: "form-control mx-4",
+                            class: "form-control mx-4 my-5",
                             type: "search",
                             placeholder: "Buscar listas...",
                             label: "Search",
