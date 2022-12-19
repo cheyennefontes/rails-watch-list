@@ -1,17 +1,1 @@
-<%=render "shared/add_banner"%>
-<div class="lists">
-  <div class="cards container">
-    <h1 class="">Listas:</h1>
-  </div>
-  <br/>
-  <br/>
-  <div class="cards container">
-    <% @lists.each do |list| %>
-      <%= link_to list_path(list), class:'text-decoration-none' do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key if list.photo.attached? %>')">
-          <h2 class="fw-bold text-center py-5" > <%= list.name %> </h2>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<%= render "shared/lists"%>
