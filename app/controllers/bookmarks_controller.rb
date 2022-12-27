@@ -10,11 +10,6 @@ class BookmarksController < ApplicationController
     authorize @bookmark
   end
 
-  def show
-    skip_authorization
-    @bookmark = Bookmark.find(params[:id])
-    @comment = Comment.new
-  end
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
