@@ -20,11 +20,11 @@ class ListsController < ApplicationController
 
   def show
     skip_authorization
-    @bookmark = Bookmark.new
   end
 
   def new
     @list = List.new
+    @bookmark = Bookmark.new
     @list.user = current_user
     authorize @list
   end

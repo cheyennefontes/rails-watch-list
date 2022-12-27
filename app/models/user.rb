@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :bookmarks
   has_many :lists
+  has_many :comments
   validates :nickname, uniqueness: true
 end
