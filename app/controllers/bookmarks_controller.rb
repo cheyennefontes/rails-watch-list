@@ -6,7 +6,7 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
     @movies = Movie.all
-    @bookmark.user_id = current_user
+    @bookmark.user = current_user
     authorize @bookmark
   end
 
@@ -34,7 +34,7 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
+    params.require(:bookmark).permit(:comment, :movie_id, :user_id)
   end
 
   def set_bookmark
