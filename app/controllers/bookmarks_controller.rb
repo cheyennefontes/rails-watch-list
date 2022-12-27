@@ -3,12 +3,12 @@ class BookmarksController < ApplicationController
   before_action :set_list, only: [:new, :create]
 
   def new
+    @bookmark.user = current_user
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
     @movies = Movie.all
     authorize @bookmark
   end
-
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
