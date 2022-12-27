@@ -6,7 +6,6 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
     @movies = Movie.all
-    @bookmark.user = current_user
     authorize @bookmark
   end
 
