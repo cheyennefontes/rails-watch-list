@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   def user_not_authorized
     flash[:alert] = "Não autorizado."
-    redirect_to(articles_path)
+    redirect_to(list_path)
   end
 
   def configure_permitted_parameters

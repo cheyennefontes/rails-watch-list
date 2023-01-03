@@ -21,7 +21,7 @@
         <div class="card-product-infos">
           <h2><%= movie.title %></h2>
           <p> <strong>Avaliação: </strong><%= bookmark.comment %></p>
-          <% if current_user && bookmark.user == current_user%>
+          <% if current_user && @list.user == current_user%>
           <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Tem certeza que deseja excluir?"} do %>
             <i class="fa-regular fa-trash-can"></i>
           <% end %>
