@@ -13,7 +13,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     @list = List.find(params[:list_id])
     @bookmark.list = @list
-    @bookmark.user = current_user
     authorize @bookmark
     if @bookmark.save
       redirect_to list_path(@list), notice: 'Bookmark was successfully created.'
