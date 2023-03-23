@@ -1,24 +1,30 @@
-# README
+# Rails Movie Watch List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um aplicativo web de listas de filmes, escrito em Ruby on Rails e hospedado no Heroku. Este aplicativo permite que o usuário crie listas nas quais irá guardar seus filmes favoritos
 
-Things you may want to cover:
+> Veja o site [_aqui_](https://chey-watch-list.herokuapp.com/). <!-- If you have the project hosted somewhere, include the link here. -->
 
-* Ruby version
+## Índice
 
-* System dependencies
+- [Informações Gerais](#general-information)
+<!-- * [License](#license) -->
 
-* Configuration
+## Informações Gerais
 
-* Database creation
+Este é um aplicativo web de listas de filmes, escrito em Ruby on Rails e hospedado no Heroku. Este aplicativo permite que o usuário crie listas nas quais irá guardar seus filmes favoritos
+Este projeto foi concluído como parte do bootcamp de desenvolvedor fullstack Le Wagon e serviu como uma oportunidade para desenvolver minhas habilidades em:
 
-* Database initialization
+ - Arquitetura MVC
+ - Ruby on Rails 
+ - HTML 
+ - SCSS
+ - Bootstrap
+ - JavaScript
+ - Cloudinary Image Hosting
+ - Autenticação de usuário
+ - web Scraping  
+ - PostgreSQL
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
