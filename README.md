@@ -31,4 +31,14 @@ Este projeto foi concluído como parte do bootcamp de desenvolvedor fullstack Le
 
 
 
+
+
+
+
+
+
+
+
+
+
 ![main banner](https://github.com/cheyennefontes/rails-watch-list/blob/master/app/assets/images/site-2.png)
