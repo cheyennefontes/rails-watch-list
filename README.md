@@ -2,7 +2,7 @@
 
 Este é um aplicativo web de listas de filmes, escrito em Ruby on Rails e hospedado no Heroku. Este aplicativo permite que o usuário crie listas nas quais irá guardar seus filmes favoritos
 
-> Veja o site [_here_](https://chey-watch-list.herokuapp.com/). <!-- If you have the project hosted somewhere, include the link here. -->
+> Veja o site [_aqui_](https://chey-watch-list.herokuapp.com/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Índice
 
