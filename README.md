@@ -19,6 +19,24 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
+
 * Deployment instructions
 
 * ...
+
+![main banner](https://github.com/cheyennefontes/rails-watch-list/blob/master/app/assets/images/site.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+![main banner](https://github.com/cheyennefontes/rails-watch-list/blob/master/app/assets/images/site-2.png)
+
