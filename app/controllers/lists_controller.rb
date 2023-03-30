@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     end
     respond_to do |format|
       if turbo_frame_request?
-        format.html { render partial: 'shared/lists', locals: { lists: @lists } }
+        format.html { render partial: 'lists/lists', locals: { lists: @lists } }
       else
         format.html
       end
