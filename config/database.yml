@@ -1,12 +1,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: db
+  username: postgres
+  password: senha123
   pool: 5
 
 development:
   <<: *default
   database: rails-watch-list_development
+  host: db
+  port: 5432
 
 test:
   <<: *default
   database: rails-watch-list_test
+  host: db
+  port: 5432
